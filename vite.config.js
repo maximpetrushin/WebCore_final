@@ -6,4 +6,5 @@ export default defineConfig({
       scss: {},
     },
   },
+  base: '/WebCore_final/'
 })

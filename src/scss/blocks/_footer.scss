@@ -9,4 +9,21 @@
   font-size: $font-size-small;
   color: $link-color;
   text-align: center;
+    @media (min-width: $width-tablet) {
+      flex-direction: row;
+      align-items: start;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+        &__text-content {
+          flex: 1 1 0;
+          min-width: 0;
+
+            &:first-child {
+              text-align: left;
+            }
+            &:last-child {
+              text-align: right;
+            }
+        }
+    }
 }

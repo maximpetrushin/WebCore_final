@@ -1,0 +1,47 @@
+@use "../global/variables" as *;
+@use "./repair-active";
+
+.menu {
+  display: flex;
+  gap: $gap-menu;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  height: 88px;
+  border-bottom: 1px solid $highlight-color;
+  background-color: $white-color;
+
+    &__divider {
+      display: none;
+    }
+    &__logo  {
+      margin-right: auto;
+    }
+    &__user-active {
+      display: none;
+    }
+
+    @media (min-width: $width-tablet) {
+      &__user-active {
+        display: inherit;
+      }
+      &__divider {
+        display: inherit;
+      }
+    }
+
+    @media  (min-width: $width-desktop) {
+      background-color: inherit;
+
+      &__user-active {
+        display: none;
+      }
+      &__logo {
+        display: none;
+      }
+
+
+    }
+
+}
+

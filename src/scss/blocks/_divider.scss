@@ -1,0 +1,7 @@
+@use "../global/variables" as *;
+
+@media (min-width: $width-desktop) {
+  .divider {
+    display: none;
+  }
+};

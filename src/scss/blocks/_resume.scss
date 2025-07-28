@@ -1,0 +1,51 @@
+@use "../global/variables" as *;
+
+.resume {
+  display: flex;
+  flex-direction: column;
+
+    &__text-content {
+      margin: 24px 16px 16px 16px;
+    }
+
+    @media (min-width: $width-tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+
+      &__text-content {
+        margin: 0;
+      }
+    }
+}
+
+.text-content {
+  font-family: $font-regular;
+  font-size: $font-size-small;
+  line-height: 20px;
+
+    &__paragraph {
+      &--hidden,
+      &--mobile-hidden {
+        display: none;
+      }
+    }
+
+    &__read-more {
+      margin-top: 16px;
+    }
+  @media (min-width: $width-tablet) {
+    &__paragraph {
+      &--mobile-hidden {
+        display: inherit;
+      }
+      &--tablet-hidden {
+        display: none;
+      }
+    }
+  }
+
+  .image {
+    width: 100%;
+  }
+}

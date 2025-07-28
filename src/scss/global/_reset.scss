@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html, body {
+  height: 100%;
+  line-height: 1;
+  font-size: 100%;
+  font-family: sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  color: inherit;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+
+button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+hr {
+  display: block;
+  height: 1px;
+  background: #ccc;
+  border: none;
+}

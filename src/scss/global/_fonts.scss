@@ -1,0 +1,22 @@
+@use "../global/variables" as *;
+
+@font-face {
+  font-family: $font-regular;
+  src: url("/fonts/TTLakes/TTLakes-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-medium;
+  src: url("/fonts/TTLakes/TTLakes-Medium.ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: $font-bold;
+  src: url("/fonts/TTLakes/TTLakes-Bold.ttf");
+  font-style: normal;
+  font-weight: 500;
+}

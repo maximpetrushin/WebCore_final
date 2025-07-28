@@ -1,0 +1,20 @@
+@use "../global/variables" as *;
+
+.repair-active {
+  display: flex;
+  gap: $gap-menu;
+
+    @media (min-width: $width-desktop) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+        &__item {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+@use "../global/variables" as *;
+
+
+.navigation {
+  display: flex;
+
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      overflow-x: scroll;
+    }
+
+    &__link {
+      display: inline-block;
+      padding: 8px 16px;
+      height: 40px;
+      white-space: nowrap;
+      color: $link-color;
+      font-family: $font-medium;
+      font-size: $font-size-main;
+      border: 2px solid transparent;
+      border-radius: $border-radius-main;
+    }
+
+    &__link:hover {
+      border: 2px solid $highlight-color;
+      border-radius: $border-radius-main;
+      background-color: $white-color;
+    }
+
+    @media (min-width: $width-desktop) {
+      &__list {
+        overflow-x: inherit;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+
+}

@@ -1,0 +1,11 @@
+@use "../global/variables" as *;
+
+.body {
+  font-family: $font-regular, sans-serif;
+  font-size: $font-size-main;
+  min-height: 100vh;
+  min-width: $width-mobile;
+  max-width: $width-desktop;
+  background-color: $background-color;
+  margin: 0 auto;
+}

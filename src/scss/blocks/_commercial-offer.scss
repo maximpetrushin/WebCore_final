@@ -1,0 +1,30 @@
+@use "../global/variables" as *;
+
+.commercial-offer {
+  &__text-content {
+    margin: 16px;
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 16px;
+    font-family: $font-bold;
+    font-size: $font-size-main;
+    font-weight: 500;
+
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 8px;
+        height: 12px;
+        background-image: url("/img/dropdown.svg");
+        background-repeat: no-repeat;
+        margin-left: 8px;
+      }
+
+      &:hover {
+        color: $link-color;
+      }
+  }
+}

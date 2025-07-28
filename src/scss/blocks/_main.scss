@@ -1,0 +1,32 @@
+@use "../global/variables" as *;
+
+.main{
+  &__navigation{
+    margin-top: 24px;
+    margin-left: 16px;
+  }
+
+  &__card-section {
+    margin-top: 32px;
+  }
+
+  &__table-section {
+    &--hidden {
+      display: none;
+    }
+    @media (min-width: $width-tablet) {
+      display: flex;
+      margin: 24px;
+    }
+  }
+
+  @media (min-width: $width-tablet) {
+    &__resume {
+      margin: 32px 25px 40px 25px;
+    }
+  }
+
+  &__footer {
+    padding: 16px;
+  }
+}

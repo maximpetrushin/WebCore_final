@@ -1,0 +1,6 @@
+@use "../global/variables" as *;
+
+.user-active {
+  display: flex;
+  gap: $gap-menu;
+}

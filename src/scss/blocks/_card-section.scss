@@ -1,0 +1,169 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+.card-section {
+  &__swiper {
+    margin-top: 16px;
+    margin-left: 16px;
+  }
+
+  @media (min-width: $width-tablet) {
+    &--hidden {
+      display: none;
+    }
+  }
+}
+
+
+.subtitle {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  max-height: 80px;
+  min-height: 56px;
+  border-top: 1px solid $highlight-color;
+  background-image: linear-gradient(to right, #F8F8F8 0%, $white-color 100%);
+  font-family: $font-regular;
+  font-size: $font-size-main;
+  text-transform: uppercase;
+  line-height: 24px;
+  color: $link-color;
+}
+
+.card-list {
+  &__item {
+    display: flex;
+    width: 240px;
+    height: 72px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $white-color;
+    border: 1px solid $card-border-color;
+    border-radius: $border-radius-main;
+    padding: 0 16px;
+
+      &:hover {
+        transform: scale(1.01);
+      }
+
+      &--repair {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding: 16px;
+        width: 240px;
+        height: 160px;
+      }
+
+      &--price {
+        align-items: flex-start;
+        padding: 16px;
+        width: 260px;
+        height: 200px;
+      }
+  }
+  &__brand-logo {
+    margin-right: auto;
+  }
+
+  &__read-more {
+    display: none;
+  }
+
+  &__repair-link {
+    align-self: flex-start;
+  }
+
+  @media (min-width: $width-tablet) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 240px);
+    gap: 16px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+
+      &--hidden {
+        max-height: 170px;
+        overflow: hidden;
+      }
+
+      &__read-more {
+        display: flex;
+        margin-top: 32px;
+        margin-left: 32px;
+        margin-bottom: 32px;
+      }
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: $gap-regular;
+
+  &__swapper {
+      position: relative;
+    }
+
+    &__title {
+      font-size: 14px;
+      color: $link-color;
+    }
+
+    &__definition {
+      font-size: $font-size-small;
+    }
+}
+
+.table-price {
+  @media (min-width: $width-tablet) {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__table-header {
+    width: 100%;
+    color: $link-color;
+    font-family: $font-regular;
+    font-size: $font-size-small;
+    text-align: left;
+  }
+
+  &__table-body {
+    //background-color: $white-color;
+    border-radius: 16px;
+  }
+
+  &__table-row {
+    position: relative;
+    display: table-row;
+    height: 64px;
+
+      &:not(:last-child) {
+        &:after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 5%;
+          width: 90%;
+          border-bottom: 1px solid #EAEAEA;
+        }
+      }
+  }
+
+  &__table-cell {
+    padding: 16px;
+  }
+
+  &__button-cell {
+    text-align: right;
+    padding: 16px;
+  }
+
+  &__button {
+    position: static;
+    display: inline-flex;
+  }
+}

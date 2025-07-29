@@ -1,0 +1,109 @@
+@use "../global/variables" as *;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: $white-color;
+  box-shadow: 10px 10px 50px 0 gray;
+  position: fixed;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  z-index: 11;
+
+    &--hidden {
+      display: none;
+    }
+
+    &__header {
+      display: flex;
+      gap: $gap-menu;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+    }
+
+    &__page-nav {
+      margin-top: 40px;
+      margin-bottom: auto;
+    }
+
+    &__footer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: space-around;
+      margin-left: 24px;
+      margin-top: 24px;
+    }
+}
+
+.page-nav {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $gap-large;
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    font-family: $font-medium;
+    font-size: $font-size-main;
+    align-items: center;
+    height: 32px;
+    padding-left: 24px;
+    transition: color 0.3s;
+
+      &:hover {
+        color: #7E7E82;
+        &::before {
+          content: '';
+          position: absolute;
+          display: inline-block;
+          width: 4px;
+          height: 32px;
+          background-image: url("/WebCore_final/public/img/highlight.svg");
+          background-size: cover;
+          background-repeat: round;
+          left: 0;
+        }
+      }
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+    &__email  {
+      font-family: $font-medium;
+      transition: color 0.3s;
+        &:hover {
+          color: $link-color;
+        }
+    }
+    &__tel {
+      font-family: $font-bold;
+      font-size: $font-size-title;
+        &:hover {
+          color: $link-color;
+        }
+    }
+}
+
+.language-switcher {
+  display: flex;
+  gap: 8px;
+    &__link {
+      transition: color 0.3s;
+      &:hover {
+        color: $link-color;
+      }
+    }
+}

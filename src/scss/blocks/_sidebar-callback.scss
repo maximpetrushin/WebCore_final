@@ -1,0 +1,72 @@
+@use "../global/variables" as *;
+@use "../global/mixins" as *;
+
+
+.sidebar-callback {
+  @include fullscreen;
+  overflow-y: auto;
+  background-color: $white-color;
+  box-shadow: 10px 10px 50px 0 gray;
+  position: fixed;
+  z-index: 11;
+  gap: $gap-regular;
+
+    &--hidden {
+      display: none;
+    }
+
+    &__container {
+      margin: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: $gap-regular;
+    }
+
+    &__title {
+      margin-left: -16px;
+    }
+
+    &__link {
+      color: $color-button;
+      cursor: pointer;
+    }
+
+    &__button {
+      &--submit {
+        align-self: flex-end;
+      }
+    }
+
+    @media (min-width: $width-tablet) {
+      right: 0;
+      width: 440px;
+      border-left: 1px solid $highlight-color;
+      overflow: visible;
+
+        &__button {
+          position: absolute;
+          left: -72px;
+        }
+    }
+}
+
+.callback-form {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-regular;
+
+    &__input {
+      width: 100%;
+      padding: 10px 15px;
+      border: 1px solid $card-border-color;
+      border-radius: 6px;
+      outline: none;
+      color: $grey-text-color;
+      font-family: $font-medium;
+      font-size: $font-size-main;
+      resize: none;
+        &:focus {
+          @include form-focus;
+        }
+    }
+}

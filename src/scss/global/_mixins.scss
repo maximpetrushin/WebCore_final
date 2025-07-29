@@ -1,4 +1,16 @@
+@use "variables" as *;
+
 @mixin bg-button-icon {
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+@mixin fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin form-focus {
+  border-color: $highlight-color;
+  box-shadow: 0 0 2px 2px $highlight-color;
 }

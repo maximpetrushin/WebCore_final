@@ -1,11 +1,11 @@
 @use "../global/variables" as *;
+@use "../global/mixins" as *;
 
 .sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 100vw;
-  height: 100vh;
+  @include fullscreen;
   overflow-y: auto;
   background-color: $white-color;
   box-shadow: 10px 10px 50px 0 gray;
@@ -14,8 +14,23 @@
   padding-bottom: 18px;
   z-index: 11;
 
+    @media (min-width: $width-tablet) {
+      width: 320px;
+    }
+
+    @media (min-width: $width-desktop) {
+      position: fixed;
+      min-height: 100%;
+      box-shadow: none;
+      z-index: 1;
+    }
+
     &--hidden {
       display: none;
+        @media (min-width: $width-desktop) {
+          display: flex;
+          width: 300px;
+        }
     }
 
     &__header {
@@ -24,6 +39,10 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 24px;
+    }
+
+    &__logo {
+      margin-right: auto;
     }
 
     &__page-nav {

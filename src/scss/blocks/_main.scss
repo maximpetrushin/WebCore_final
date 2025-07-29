@@ -1,6 +1,10 @@
 @use "../global/variables" as *;
 
 .main{
+  @media (min-width: $width-desktop) {
+    margin-left: 300px;
+  }
+
   &__navigation{
     margin-top: 24px;
     margin-left: 16px;

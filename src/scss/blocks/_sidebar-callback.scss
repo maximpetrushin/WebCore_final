@@ -70,3 +70,9 @@
         }
     }
 }
+
+.feedback {
+  &--hidden {
+    display: none;
+  }
+}

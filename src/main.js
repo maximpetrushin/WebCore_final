@@ -6,6 +6,30 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', initSwiper)
 })
 
+
+const sidebar = document.querySelector('.sidebar');
+const blurOverlay = document.querySelector('.blur-overlay');
+const burgerButton = document.querySelector('.button--burger');
+const burgerClose = document.querySelector('.button--cancel');
+
+
+
+burgerButton.addEventListener('click', function () {
+    sidebar.classList.remove('sidebar--hidden');
+    blurOverlay.classList.remove('blur-overlay--hidden');
+})
+
+blurOverlay.addEventListener('click', function () {
+    sidebar.classList.add('sidebar--hidden');
+    sidebarFeedback.classList.add('feedback--hidden');
+    blurOverlay.classList.add('blur-overlay--hidden');
+})
+
+burgerClose.addEventListener('click', function () {
+    sidebar.classList.add('sidebar--hidden');
+    blurOverlay.classList.add('blur-overlay--hidden');
+})
+
 const readMoreFirst = document.getElementById('readMoreFirst');
 const readMoreBefore = document.querySelector('.read-more');
 const mobileHiddenText = document.querySelector('.text-content__paragraph--mobile-hidden');
@@ -88,4 +112,65 @@ for (let i = 0; i < buttonsOrder.length; i++) {
     buttonOrderArrow.src = 'img/dropdown2.svg';
     buttonsOrder[i].appendChild(buttonOrderArrow);
 }
+
+const buttonsSubmit = document.querySelectorAll('.button--submit');
+for (let i = 0; i < buttonsSubmit.length; i++) {
+
+    let buttonSubmitText = document.createElement('span');
+    buttonSubmitText.textContent = 'отправить';
+    buttonsSubmit[i].appendChild(buttonSubmitText);
+
+    let buttonSubmitArrow = document.createElement('img');
+    buttonSubmitArrow.src = 'img/dropdown2.svg';
+    buttonsSubmit[i].appendChild(buttonSubmitArrow);
+}
+
+const sidebarCallback = document.querySelector('.sidebar-callback');
+const buttonsCallback = document.querySelectorAll('.button--call');
+const callbackCloseBtn = sidebarCallback.querySelector('.button--cancel');
+const sidebarFeedback = document.querySelector('.feedback');
+const buttonsFeedback = document.querySelectorAll('.button--feedback');
+const feedbackCloseBtn = sidebarFeedback.querySelector('.button--cancel');
+
+buttonsCallback.forEach(buttonCallback => {
+    buttonCallback.addEventListener('click', function () {
+        if (!sidebar.classList.contains('sidebar--hidden')) {
+            sidebar.classList.add('sidebar--hidden');
+        }
+        sidebarCallback.classList.toggle('sidebar-callback--hidden');
+        blurOverlay.classList.remove('blur-overlay--hidden');
+    })
+})
+
+buttonsFeedback.forEach(buttonFeedback => {
+    buttonFeedback.addEventListener('click', function () {
+        if (!sidebar.classList.contains('sidebar--hidden')) {
+            sidebar.classList.add('sidebar--hidden');
+        }
+        sidebarFeedback.classList.toggle('feedback--hidden');
+        blurOverlay.classList.remove('blur-overlay--hidden');
+    })
+})
+
+blurOverlay.addEventListener('click', function () {
+    sidebarCallback.classList.add('sidebar-callback--hidden');
+    blurOverlay.classList.add('blur-overlay--hidden');
+    if (!sidebar.classList.contains('sidebar--hidden')) {
+        sidebar.classList.add('sidebar--hidden');
+    }
+})
+
+callbackCloseBtn.addEventListener('click', function () {
+    sidebarCallback.classList.toggle('sidebar-callback--hidden');
+    blurOverlay.classList.toggle('blur-overlay--hidden');
+})
+
+feedbackCloseBtn.addEventListener('click', function () {
+    sidebarFeedback.classList.toggle('feedback--hidden');
+    blurOverlay.classList.toggle('blur-overlay--hidden');
+})
+
+
+
+
 
